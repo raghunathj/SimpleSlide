@@ -67,8 +67,13 @@
 
 				spychild.click(function(e){
 					e.preventDefault();
-					var myindex = $(this).index();
-					slideTo(myindex);
+					if(!$(this).hasClass(options.spyactiveclass)){
+						var myindex = $(this).index();
+						if ($(this).attr('data-group') !== undefined) {
+							var myindex = $(this).attr('data-group');
+						}
+						slideTo(myindex);
+					}
 				});
 
 				//Code for handeling touchdevice
