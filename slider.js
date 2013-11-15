@@ -31,6 +31,7 @@
 				var element = $(this);
 				var child = element.children();
 				var totalChild = child.size();
+				var spychild = $(options.spycontainer).children();
 
 				//All starts from here
 				debugMessage("Welcome to SimpleSlide v1 by Raghunath J");
@@ -62,6 +63,12 @@
 				$(options.pause).click(function(e){
 					e.preventDefault();
 					stopSlideShow();
+				});
+
+				spychild.click(function(e){
+					e.preventDefault();
+					var myindex = $(this).index();
+					slideTo(myindex);
 				});
 
 				//Code for handeling touchdevice
@@ -170,6 +177,13 @@
 							}
 						break;
 					}
+					spy();
+				}
+
+				function slideTo(number){
+					child.eq(index).fadeOut(options.speed);
+					child.eq(number).fadeIn(options.speed);
+					index = number;
 					spy();
 				}
 
