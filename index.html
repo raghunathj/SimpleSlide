@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		#slide { position:relative; width:940px; height:528px;padding: 0px;margin: 0px; }
+		#slide li{ position:absolute; left:0; top:0; }
+		#spycontainer{display: inline-block;}
+		#spycontainer li{float:left;margin-right: 10px;list-style-type: none;cursor: pointer;}
+		.spyactive{color:red;}
+	</style>
+</head>
+<body>
+<ul id="spycontainer">
+	<li id="id1">Slide 1</li>
+	<li id="id2">Slide 2</li>
+	<li id="id3">Slide 3</li>
+	<li id="id4">Slide 4</li>
+	<li id="id5">Slide 5</li>
+	<li id="id6">Slide 6</li>
+</ul>
+<ul id="slide">
+	<li data-spy="#id1"><img src="http://placehold.it/940x528&text=1"></li>
+	<li data-spy="#id2"><img src="http://placehold.it/940x528&text=2"></li>
+	<li data-spy="#id3"><img src="http://placehold.it/940x528&text=3"></li>
+	<li data-spy="#id4"><img src="http://placehold.it/940x528&text=4"></li>
+	<li data-spy="#id5"><img src="http://placehold.it/940x528&text=5"></li>
+	<li data-spy="#id6"><img src="http://placehold.it/940x528&text=6"></li>
+</ul>
+<a class="prev" href="#">Prev</a>
+<a class="pause" href="#">Pause</a>
+<a class="next" href="#">Next</a>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="slider.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//var myindex = 1;
+		var settings = {
+			"index":0,
+			"spy":true,
+			"autoplay":true
+		}
+		$("#slide").simpleSlide(settings);
+	});
+</script>
+</body>
+</html>
