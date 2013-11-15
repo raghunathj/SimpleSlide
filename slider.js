@@ -7,7 +7,7 @@
 			"prev":".prev",
 			"next":".next",
 			"pause":".pause",
-			"mode":"fade",
+			"effect":"fade",
 			"speed":"slow",
 			"index":0,
 			"spy":false,
